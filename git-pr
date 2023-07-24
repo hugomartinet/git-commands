@@ -1,0 +1,16 @@
+#!/bin/bash
+
+read -p "❔ Title: " title
+while [[ $title == '' ]]; do
+    read -p "❌ Title is required: " title
+done
+
+read -p "❔ Description (press enter to skip): " body
+
+git push --quiet
+
+dev_pr=$(gh pr create --base dev --title "[dev] $title" --body "$body")
+prod_pr=$(gh pr create --base main --title "[prod] $title" --body "$body")
+
+echo "Pull Request (dev): $dev_pr"
+echo "Pull Request (prod): $prod_pr"
