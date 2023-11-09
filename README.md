@@ -34,3 +34,7 @@ Opens interactive list of commits in the current repo. You can pick a chosen com
 ### git pr
 
 Enter a Title and an optionnal Description. This will push the current branch and create 1 pull request on `dev` and 1 pull request on `main`.
+
+### git search
+
+Search for a string in the git history : list commits where this string was added or removed.
